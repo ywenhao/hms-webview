@@ -20,13 +20,16 @@ struct Index {
     const params = res.params
     const cbId = res.cbId
 
-    this.nativePort!.postMessageEvent(JSON.stringify({
-      cbId,
-      method,
-      resultType: 'resolve',
-      type: 'hms-webview',
-      data: '参数是：' + JSON.stringify(params),
-    }))
+    // 有返回值
+    if (cbId) {
+      this.nativePort!.postMessageEvent(JSON.stringify({
+        cbId,
+        method,
+        resultType: 'resolve',
+        type: 'hms-webview',
+        data: '参数是：' + JSON.stringify(params),
+      }))
+    }
   }
 
   build() {

@@ -8,8 +8,6 @@ function hmsOnMessage(e: MessageEvent) {
   if (typeof data === 'string') {
     try {
       const dataObj = JSON.parse(data)
-      const type = dataObj.type
-      if (type !== 'hms-webview') return
 
       const cbId = dataObj.cbId
       const result = dataObj.data

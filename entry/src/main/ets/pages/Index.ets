@@ -26,7 +26,6 @@ struct Index {
         cbId,
         method,
         resultType: 'resolve',
-        type: 'hms-webview',
         data: '参数是：' + JSON.stringify(params),
       }))
     }
